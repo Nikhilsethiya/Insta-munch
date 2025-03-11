@@ -16,9 +16,6 @@ variables:
   dockerfilePath: '$(Build.SourcesDirectory)/insta-munch/DockerFile'
   tag: '$(Build.BuildId)'
 
-pool:
-name: Default
-
 stages:
 - stage: Build
   displayName: Build and push stage
