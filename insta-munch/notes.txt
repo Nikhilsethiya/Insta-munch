@@ -1,0 +1,78 @@
+1. Skeleton loader {Done}
+2. Lazy Loading {Done}
+3. Improve Accesibility
+4. Disable sourcemap in inspect mode
+5. Image Optimisation
+6. Intersetion Observer
+7. failed data vs rum data vs lab data
+8. make a kind of login authentication
+9. make website responsive
+
+
+
+
+
+<div
+          title="filters"
+          className="flex items-center flex-shrink-0 relative bg-violet-100 hover:text-gray-900 px-4 py-2 rounded-full hover:bg-violet-200 font-semibold text-violet-500 hover:cursor-pointer text-base"
+          activeclassname="border-violet-400"
+          onClick={openModal}
+        >
+          Filters
+          <img
+            loading="lazy"
+            src={FilterIcon}
+            className="w-4 h-4 ml-2"
+            alt="Profile Icon"
+          />
+        </div>
+        <div className="dropdown relative inline-block z-10" ref={dropdownRef}>
+          <button
+            title="Profile"
+            className="flex items-center flex-shrink-0 relative bg-violet-100 hover:text-gray-900 px-4 py-2 rounded-full hover:bg-violet-200 font-semibold text-violet-500 hover:cursor-pointer focus:text-gray-900 focus:bg-violet-200"
+            activeclassname="border-violet-400"
+            onClick={toggleDropdown}
+          >
+            Sort By
+            <img
+              loading="lazy"
+              src={SortBy}
+              className="w-3 h-3 ml-2"
+              alt="Profile Icon"
+            />
+          </button>
+          <div
+            className={`dropdown-menu absolute ${
+              isOpen ? "block" : "hidden"
+            } bg-violet-100 border rounded shadow-lg w-52 mt-1`}
+          >
+            <Link
+              href="#"
+              className="block px-4 py-2 rounded-full text-gray-900 hover:bg-white font-semibold hover:text-violet-500"
+              onClick={closeDropdown}
+            >
+              Delivery Time
+            </Link>
+            <Link
+              href="#"
+              className="block px-4 py-2 rounded-full text-gray-900 hover:bg-white font-semibold hover:text-violet-500"
+              onClick={closeDropdown}
+            >
+              Rating
+            </Link>
+            <Link
+              href="#"
+              className="block px-4 py-2 rounded-full text-gray-900 hover:bg-white font-semibold hover:text-violet-500"
+              onClick={closeDropdown}
+            >
+              Cost: Low to High
+            </Link>
+            <Link
+              href="#"
+              className="block px-4 py-2 rounded-full text-gray-900 hover:bg-white font-semibold hover:text-violet-500"
+              onClick={closeDropdown}
+            >
+              Cost: High to Low
+            </Link>
+          </div>
+        </div>

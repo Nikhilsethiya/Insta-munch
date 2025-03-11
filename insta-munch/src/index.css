@@ -1,0 +1,196 @@
+/* src/index.css */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Your custom styles go here */
+::selection {
+  background-color: rgba(245, 174, 185, 0.588);
+  color: black;
+}
+.carousel-container {
+  position: relative;
+  overflow: hidden; /* Hide the scrollbar */
+}
+
+.slide-button {
+  position: absolute;
+  transform: translateY(-50%);
+  padding: 5px;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 50%; /* Make the buttons round */
+  transition: background-color 0.3s;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.left {
+  right: 40px;
+  top: 20px;
+}
+
+.right {
+  right: 0;
+  top: 20px;
+}
+
+.image-carousel {
+  padding-top: 20px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: transparent transparent; /* For Firefox */
+  scroll-behavior: smooth;
+}
+
+.image-container {
+  flex-shrink: 0;
+  margin-right: 40px;
+}
+
+.carousel-image {
+  object-fit: cover;
+  object-position: center;
+  width: 160px;
+  height: 180px;
+}
+
+/* Style scrollbar for Webkit browsers (Chrome, Safari) */
+.image-carousel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.image-carousel::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.image-carousel::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.card-container {
+  width: 280px; /* Adjust as needed */
+  padding: 8px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.card-container:hover {
+  transform: scale(0.95); /* Shrink effect */
+}
+
+.card-image {
+  width: 100%;
+  height: 180px; /* Adjust as needed */
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.card-image-overlay {
+  border-radius: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    transparent
+  ); /* Adjust gradient color and transparency here */
+}
+
+.card-image-container {
+  position: relative;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  left: 10px;
+  bottom: 0;
+  font-size: 0.7em;
+  color: white; /* Adjust text color */
+}
+
+.card-content {
+  margin-top: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.cuisine-list {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.5em;
+}
+
+.custom-alternate-animation {
+  font-family: head;
+  animation: alternateanime 1.5s infinite alternate;
+}
+.custom-alternate-animation:hover {
+  cursor: pointer;
+}
+
+.new-offer {
+  top: -20px;
+  background-color: red;
+  color: white;
+  font-weight: 800;
+  clip-path: polygon(67% 34%, 70% 53%, 92% 44%, 75% 69%, 76% 84%, 51% 73%, 49% 73%, 24% 84%, 25% 69%, 8% 44%, 30% 53%, 33% 34%, 50% 51%);
+}
+.new-offer p{
+  bottom: 0;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.4em;
+}
+
+.btnall {
+  transition: all ease 0.2s;
+}
+.btnall:active {
+  transform: scale(0.95);
+}
+.profilebadge {
+  margin-top: -13px;
+  margin-left: 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.underlinecss::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: blueviolet;
+  transition: all ease 0.1s;
+}
+.underlinecss:hover::after {
+  width: 100%;
+}
+
+
+.transition-transform {
+  transition-property: transform;
+  transition-duration: 0.5s; /* Adjust as needed */
+}
+
+
+@keyframes alternateanime {
+  0% {
+    color: rgb(98, 40, 39);
+  }
+  100% {
+    color: rgba(0, 12, 80, 0.838);
+  }
+}

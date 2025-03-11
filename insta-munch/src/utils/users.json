@@ -1,0 +1,125 @@
+[
+  {
+    "test": "test"
+  },
+  {
+    "id": "1",
+    "password": "12300",
+    "name": "Shreyans Mutha",
+    "phonenumber": "9403123941",
+    "email": "shree@mail.com",
+    "cart": [
+      {
+        "cardid": 100,
+        "caidimage": "burger"
+      },
+      {
+        "cardid": 200,
+        "caidimage": "pizza"
+      }
+    ],
+    "settings": {
+      "reminderalerts": true
+    }
+  },
+  {
+    "id": "1",
+    "password": "qwe123",
+    "name": "John Doe",
+    "phonenumber": "1234567890",
+    "email": "shrdyansmutha1@gmail.com",
+    "cart": [
+      {
+        "cardid": 101,
+        "caidimage": "sandwich"
+      },
+      {
+        "cardid": 201,
+        "caidimage": "sushi"
+      }
+    ],
+    "settings": {
+      "reminderalerts": true
+    }
+  },
+  {
+    "id": "2",
+    "password": "abc456",
+    "name": "Jane Smith",
+    "phonenumber": "9876543210",
+    "email": "jane.smith@example.com",
+    "cart": [
+      {
+        "cardid": 102,
+        "caidimage": "taco"
+      },
+      {
+        "cardid": 202,
+        "caidimage": "pasta"
+      }
+    ],
+    "settings": {
+      "reminderalerts": false
+    }
+  },
+  {
+    "id": "3",
+    "password": "pass789",
+    "name": "Alice Johnson",
+    "phonenumber": "2345678901",
+    "email": "alice.johnson@example.com",
+    "cart": [
+      {
+        "cardid": 103,
+        "caidimage": "salad"
+      },
+      {
+        "cardid": 203,
+        "caidimage": "steak"
+      }
+    ],
+    "settings": {
+      "reminderalerts": true
+    }
+  },
+  {
+    "id": "4",
+    "password": "secure789",
+    "name": "Bob Brown",
+    "phonenumber": "3456789012",
+    "email": "bob.brown@example.com",
+    "cart": [
+      {
+        "cardid": 104,
+        "caidimage": "pancake"
+      },
+      {
+        "cardid": 204,
+        "caidimage": "samosa"
+      }
+    ],
+    "settings": {
+      "reminderalerts": false
+    }
+  },
+  {
+    "id": "5",
+    "password": "test123",
+    "name": "Emily Wilson",
+    "phonenumber": "4567890123",
+    "email": "emily.wilson@example.com",
+    "cart": [
+      {
+        "cardid": 105,
+        "caidimage": "icecream"
+      },
+      {
+        "cardid": 205,
+        "caidimage": "burrito"
+      }
+    ],
+    "settings": {
+      "reminderalerts": true
+    }
+  }
+]
