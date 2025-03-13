@@ -3,7 +3,7 @@
 set -x
 
 # Set the repository URL
-REPO_URL="https://Fv5DjorXADiBU4xLOko9nwQRWgu6wrQOC9IO4pNYnsNvKAW1v2lrJQQJ99BCACAAAAAAAAAAAAASAZDO2d3u@dev.azure.com/pratikshappatil59/demo_project/_git/demo_project"
+REPO_URL="https://JD1uzYFXyWv0XErH66zzlmIW90dKfFLgZZ9Q55DbyuiQdoTDALkiJQQJ99BCACAAAAAAAAAAAAASAZDO3tBAhttps@dev.azure.com/pratikshappatil59/Insta-munch/_git/Insta-munch"
 
 # Clone the git repository into the /tmp directory
 git clone "$REPO_URL" /tmp/temp_repo
