@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: insta-frontend
+  name: insta-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: insta-frontend
+  template:
+    metadata:
+      labels:
+        app: insta-frontend
+    spec:
+      containers:
+      - image: voteacr.azurecr.io/demoproject:28
+        name: insta-frontend
+        ports:
+        - containerPort: 80
+          name: insta-frontend
+      imagePullSecrets:
+      - name: acr-secret
