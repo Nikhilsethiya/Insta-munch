@@ -18,19 +18,52 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build and push stage
+  displayName: Build 
   jobs:
   - job: Build
     displayName: Build
     pool:
-     name: Default
+      name: Default
     steps:
     - task: Docker@2
-      displayName: Build and push an image to container registry
+      displayName: Build an image
       inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
+        containerRegistry: '$(dockerRegistryServiceConnection)'
+        repository: '$(imageRepository)'
+        command: 'build'
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        tags: '$(tag)'
+
+- stage: Push
+  displayName: Push 
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - job: Push
+    displayName: Push
+    pool:
+      name: Default
+    steps:
+    - task: Docker@2
+      displayName: Push the image
+      inputs:
+        containerRegistry: '$(dockerRegistryServiceConnection)'
+        repository: '$(imageRepository)'
+        command: 'push'
+        tags: '$(tag)'
+
+- stage: Update
+  displayName: Update Kubernetes Manifests
+  dependsOn: Push
+  condition: succeeded()
+  jobs:
+    - job: Update
+      displayName: Update Manifests
+      pool:
+        name: Default
+      steps:
+      - task: ShellScript@2
+        displayName: Run Update Script
+        inputs:
+          scriptPath: 'Scripts/update.sh'
+          args: 'frontend $(containerRegistry) $(imageRepository) $(tag)'
