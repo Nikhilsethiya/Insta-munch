@@ -18,7 +18,7 @@ spec:
       - image: instamunch.azurecr.io/instamunch:68
         name: insta-frontend
         ports:
-        - containerPort: 5000
+        - containerPort: 3000
           name: insta-frontend
       imagePullSecrets:
       - name: acr-secret-instamunch
