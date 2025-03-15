@@ -8,9 +8,10 @@ spec:
   type: NodePort
   ports:
   - name: "insta-frontend-service"
-    port: 5000
-    targetPort: 80
-    nodePort: 31000
+    port: 3000     
+    targetPort: 3000 
+    nodePort: 31000  
   selector:
     app: insta-frontend
+
   
