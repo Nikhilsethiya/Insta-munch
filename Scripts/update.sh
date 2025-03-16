@@ -3,7 +3,7 @@
 set -x
 
 # Set the repository URL
-REPO_URL="https://JD1uzYFXyWv0XErH66zzlmIW90dKfFLgZZ9Q55DbyuiQdoTDALkiJQQJ99BCACAAAAAAAAAAAAASAZDO3tBAhttps@dev.azure.com/pratikshappatil59/Insta-munch/_git/Insta-munch"
+REPO_URL="https://2yIlkcyE0lEdRFh00iSIkAH57Mvb5wxDG9D3i7SaebSUeet1OEyZJQQJ99BCACAAAAAAAAAAAAASAZDO2mt0@dev.azure.com/pratikshappatil59/Insta-munch/_git/Insta-munch"
 
 # Clone the git repository into the /tmp directory
 git clone "$REPO_URL" /tmp/temp_repo
@@ -13,7 +13,7 @@ cd /tmp/temp_repo
 
 # Make changes to the Kubernetes manifest file(s)
 # For example, let's say you want to change the image tag in a deployment.yaml file
-sed -i "s|image:.*|image: $2/$3:$4|g" k8s-specifications/$1-deployment.yaml
+sed -i "s|image:.*|image: $2/$3:$4|g" k8s-specification/$1-deployment.yaml
 
 # Add the modified files
 git add .

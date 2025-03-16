@@ -15,10 +15,10 @@ spec:
         app: insta-frontend
     spec:
       containers:
-      - image: voteacr.azurecr.io/demoproject:28
+      - image: instamunch.azurecr.io/instamunch:78
         name: insta-frontend
         ports:
-        - containerPort: 80
+        - containerPort: 3000
           name: insta-frontend
       imagePullSecrets:
       - name: acr-secret-instamunch
