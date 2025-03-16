@@ -107,7 +107,7 @@ function Navbar({ toggleDrawer, tabName ,handleMouseEnter, handleMouseLeave, isH
                   className="w-4 h-4 mr-2"
                   alt="Search Icon"
                 />
-                Search
+                Search Item
               </NavLink>
             </MenuItem>
             <MenuItem className="flex items-center justify-center gap-4 py-3 pl-2 pr-8 border-2 hover:border-gray-500 font-semibold">
