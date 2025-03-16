@@ -15,7 +15,7 @@ spec:
         app: insta-frontend
     spec:
       containers:
-      - image: instamunch.azurecr.io/instamunch:84
+      - image: instamunch.azurecr.io/instamunch:85
         name: insta-frontend
         ports:
         - containerPort: 3000
