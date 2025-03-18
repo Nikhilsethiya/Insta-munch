@@ -17,3 +17,5 @@ spec:
           image: instamunchbackend.azurecr.io/instamunchbackend:105
           ports:
             - containerPort: 3001
+      imagePullSecrets:
+      - name: acr-secret-backend 
