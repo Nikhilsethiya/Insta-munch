@@ -1,0 +1,71 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  paths:
+    include:
+      - insta-munch-backend/*
+
+resources:
+- repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: '21770199-7990-4bf1-afc5-fba326715988'
+  imageRepository: 'instamunchbackend'
+  containerRegistry: 'instamunchbackend.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/insta-munch-backend/DockerFile'
+  tag: '$(Build.BuildId)'
+
+stages:
+- stage: Build
+  displayName: Build 
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      name: Default
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        containerRegistry: '$(dockerRegistryServiceConnection)'
+        repository: '$(imageRepository)'
+        command: 'build'
+        dockerfile: $(dockerfilePath)
+        tags: '$(tag)'
+
+- stage: Push
+  displayName: Push 
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - job: Push
+    displayName: Push
+    pool:
+      name: Default
+    steps:
+    - task: Docker@2
+      displayName: Push the image
+      inputs:
+        containerRegistry: '$(dockerRegistryServiceConnection)'
+        repository: '$(imageRepository)'
+        command: 'push'
+        tags: '$(tag)'
+
+- stage: Update
+  displayName: Update Kubernetes Manifests
+  dependsOn: Push
+  condition: succeeded()
+  jobs:
+    - job: Update
+      displayName: Update Manifests
+      pool:
+        name: Default
+      steps:
+      - task: ShellScript@2
+        displayName: Run Update Script
+        inputs:
+          scriptPath: 'Scripts/update.sh'
+          args: 'backend $(containerRegistry) $(imageRepository) $(tag)'
