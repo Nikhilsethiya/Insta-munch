@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-deployment
-          image: instamunchbackend.azurecr.io/instamunchbackend:105
+          image: instamunchbackend.azurecr.io/instamunchbackend:106
           ports:
             - containerPort: 3001
       imagePullSecrets:
