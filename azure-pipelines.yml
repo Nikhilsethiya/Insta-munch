@@ -3,7 +3,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- master
+  paths:
+    include:
+      - insta-munch/*
 
 resources:
 - repo: self
