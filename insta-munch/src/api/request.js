@@ -2,7 +2,7 @@ import { getHandler } from "./axiosHandler";
 
 export const getSwiggyData = async (body) => {
   const swiggyURL =
-  "https://backend-deployment:3001/api/proxy/swiggy/dapi/restaurants/list/v5"; // Updated URL
+    "https://insta-munch-backend.vercel.app/api/proxy/swiggy/dapi/restaurants/list/v5";
   return getHandler(swiggyURL, {
     lat: body.lat,
     lng: body.lng,
@@ -12,14 +12,14 @@ export const getSwiggyData = async (body) => {
 };
 export const getLocationData = async (value) => {
   const locationURL =
-  "https://backend-deployment:3001/api/proxy/swiggy/dapi/misc/place-autocomplete"; // Updated URL
+    "https://insta-munch-backend.vercel.app/api/proxy/swiggy/dapi/misc/place-autocomplete";
   return getHandler(locationURL, {
     input: value,
   });
 };
 export const getCoordinatesFromPlaceId = async (placeId) => {
   const locationCOURL =
-    "https://backend-deployment:3001/api/proxy/swiggy/dapi/misc/address-recommend";
+    "https://insta-munch-backend.vercel.app/api/proxy/swiggy/dapi/misc/address-recommend";
   return getHandler(locationCOURL, {
     place_id: placeId,
   });
