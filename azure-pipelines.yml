@@ -69,3 +69,13 @@ stages:
         inputs:
           scriptPath: 'Scripts/update.sh'
           args: 'frontend $(containerRegistry) $(imageRepository) $(tag)'
+
+      - task: KubernetesManifest@1
+        inputs:
+          action: 'deploy'
+          connectionType: 'azureResourceManager'
+          azureSubscriptionConnection: 'Free Trial(1)(16eb4f92-52b3-42ad-82ce-c8c659321c97)'
+          azureResourceGroup: 'insta-much-rg'
+          kubernetesCluster: 'Insta-munch'
+          namespace: 'default'
+          manifests: 'k8s-specification/ingress.yaml'    
