@@ -78,4 +78,4 @@ stages:
           azureResourceGroup: 'insta-much-rg'
           kubernetesCluster: 'Insta-munch'
           namespace: 'default'
-          manifests: 'k8s-specification/ingress.yaml'    
+          manifests: 'k8s-specification/ingress.yaml'
